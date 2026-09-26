@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Preview - Minecraft Translator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Minecraft', 'Courier New', monospace;
+            background: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        
+        .chat-container {
+            width: 600px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border: 2px solid #555;
+        }
+        
+        .chat-title {
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .chat-messages {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .chat-message {
+            margin-bottom: 12px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid #4a90e2;
+        }
+        
+        .message-header {
+            font-size: 12px;
+            color: #aaa;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .sender {
+            color: #ffd700;
+            font-weight: bold;
+        }
+        
+        .lang-badge {
+            background: #333;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 10px;
+        }
+        
+        .message-text {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .original-text {
+            color: #888;
+            font-size: 12px;
+            margin-top: 5px;
+            font-style: italic;
+        }
+        
+        .viewing-as {
+            background: #2a2a2a;
+            padding: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #88ff88;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-title">Translated Chat Preview</div>
+        
+        <div class="viewing-as">
+            👁️ Viewing as: English (🇺🇸)
+        </div>
+        
+        <div class="chat-messages">
+            <div class="chat-message">
+                <div class="message-header">
+                    <span class="sender">[Juan]</span>
+                    <span class="lang-badge">🇪🇸 Spanish</span>
+                </div>
+                <div class="message-text">Hola, ¿cómo estás? ¿Quieres jugar Minecraft?</div>
+                <div class="original-text">Original: Hola, ¿cómo estás? ¿Quieres jugar Minecraft?</div>
+            </div>
+            
+            <div class="chat-message">
+                <div class="message-header">
+                    <span class="sender">[Pierre]</span>
+                    <span class="lang-badge">🇫🇷 French</span>
+                </div>
+                <div class="message-text">Bonjour! Je suis prêt à jouer. Quelle carte veulent-vous?</div>
+                <div class="original-text">Original: Bonjour! Je suis prêt à jouer. Quelle carte voulez-vous?</div>
+            </div>
+            
+            <div class="chat-message">
+                <div class="message-header">
+                    <span class="sender">[Yuki]</span>
+                    <span class="lang-badge">🇯🇵 Japanese</span>
+                </div>
+                <div class="message-text">こんにちは！一緒にマインクラフトをやりましょう。</div>
+                <div class="original-text">Original: こんにちは！一緒にマインクラフトをやりましょう。</div>
+            </div>
+            
+            <div class="chat-message">
+                <div class="message-header">
+                    <span class="sender">[Hans]</span>
+                    <span class="lang-badge">🇩🇪 German</span>
+                </div>
+                <div class="message-text">Hallo zusammen! Ich kann auch bauen.</div>
+                <div class="original-text">Original: Hallo zusammen! Ich kann auch bauen.</div>
+            </div>
+            
+            <div class="chat-message">
+                <div class="message-header">
+                    <span class="sender">[Carlos]</span>
+                    <span class="lang-badge">🇪🇸 Spanish</span>
+                </div>
+                <div class="message-text">¡Genial! Vamos a construir algo épico juntos.</div>
+                <div class="original-text">Original: ¡Genial! Vamos a construir algo épico juntos.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

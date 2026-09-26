@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Minecraft Translator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Minecraft', 'Courier New', monospace;
+            background: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        
+        .admin-container {
+            width: 700px;
+            background: #2a2a2a;
+            padding: 30px;
+            border: 3px solid #555;
+        }
+        
+        .admin-title {
+            color: #ffd700;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #555;
+            padding-bottom: 15px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .stat-card {
+            background: #1a1a1a;
+            padding: 15px;
+            border: 2px solid #444;
+        }
+        
+        .stat-label {
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        
+        .stat-value {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .stat-value.success {
+            color: #4caf50;
+        }
+        
+        .stat-value.warning {
+            color: #ff9800;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            color: #4a90e2;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+        }
+        
+        .language-list {
+            background: #1a1a1a;
+            padding: 15px;
+            border: 2px solid #444;
+        }
+        
+        .language-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .language-item:last-child {
+            border-bottom: none;
+        }
+        
+        .active-toggle {
+            margin-left: auto;
+            background: #4caf50;
+            color: white;
+            padding: 4px 12px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        
+        .active-toggle.inactive {
+            background: #f44336;
+        }
+        
+        .api-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            background: #1a1a1a;
+            border: 2px solid #4caf50;
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #4caf50;
+        }
+        
+        .status-indicator.error {
+            background: #f44336;
+        }
+        
+        .log-preview {
+            background: #000;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 12px;
+            color: #0f0;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+        
+        .log-entry {
+            margin-bottom: 5px;
+        }
+        
+        .log-time {
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-title">📊 Admin Panel</div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Active Languages</div>
+                <div class="stat-value">9</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Translation Requests/min</div>
+                <div class="stat-value success">47</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Cache Hit Rate</div>
+                <div class="stat-value success">87%</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">API Status</div>
+                <div class="stat-value success">Online</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">🌐 Active Languages</div>
+            <div class="language-list">
+                <div class="language-item">
+                    <span>🇺🇸</span> English
+                    <span class="active-toggle">Active</span>
+                </div>
+                <div class="language-item">
+                    <span>🇪🇸</span> Spanish
+                    <span class="active-toggle">Active</span>
+                </div>
+                <div class="language-item">
+                    <span>🇫🇷</span> French
+                    <span class="active-toggle">Active</span>
+                </div>
+                <div class="language-item">
+                    <span>🇯🇵</span> Japanese
+                    <span class="active-toggle">Active</span>
+                </div>
+                <div class="language-item">
+                    <span>🇰🇷</span> Korean
+                    <span class="active-toggle">Active</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">🔌 API Status</div>
+            <div class="api-status">
+                <div class="status-indicator"></div>
+                <span>DeepTranslate API Connected</span>
+                <span style="margin-left: auto; color: #888;">Latency: 45ms</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">📋 Recent Translation Logs</div>
+            <div class="log-preview">
+                <div class="log-entry"><span class="log-time">[14:32:15]</span> ES → EN: "Hola" by Juan</div>
+                <div class="log-entry"><span class="log-time">[14:32:18]</span> FR → EN: "Bonjour" by Pierre</div>
+                <div class="log-entry"><span class="log-time">[14:32:25]</span> JA → EN: "こんにちは" by Yuki</div>
+                <div class="log-entry"><span class="log-time">[14:32:30]</span> DE → EN: "Hallo" by Hans</div>
+                <div class="log-entry"><span class="log-time">[14:32:35]</span> ES → EN: "¿Cómo estás?" by Carlos</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
