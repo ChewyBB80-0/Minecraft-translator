@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Preview - Minecraft Translator</title>
+    <title>Chat Preview - Minecraft Translator v1.0</title>
+    <!--
+        Minecraft Universal Translator Plugin
+        Copyright © 2026 ChewyBB80-0. All Rights Reserved.
+        Proprietary software. Unauthorized copying strictly prohibited.
+        Owner: ChewyBB80-0 | License: Proprietary
+    -->
     <style>
         * {
             margin: 0;
@@ -26,6 +32,15 @@
             background: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border: 2px solid #555;
+            position: relative;
+        }
+        
+        .version-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 10px;
+            color: #666;
         }
         
         .chat-title {
@@ -87,14 +102,24 @@
             text-align: center;
             color: #88ff88;
         }
+        
+        .owner-watermark {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 10px;
+            color: #333;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
     <div class="chat-container">
-        <div class="chat-title">Translated Chat Preview</div>
+        <div class="chat-title">🌐 Translated Chat Preview</div>
+        <div class="version-tag">v1.0.0 by ChewyBB80-0</div>
         
         <div class="viewing-as">
-            👁️ Viewing as: English (🇺🇸)
+            👁️ Viewing as: English (🇺🇸) | Powered by Minecraft Translator
         </div>
         
         <div class="chat-messages">
@@ -143,6 +168,12 @@
                 <div class="original-text">Original: ¡Genial! Vamos a construir algo épico juntos.</div>
             </div>
         </div>
+        
+        <div style="text-align: center; margin-top: 15px; font-size: 11px; color: #555;">
+            Minecraft Universal Translator v1.0.0 | Owner: ChewyBB80-0 | © 2026
+        </div>
     </div>
+    
+    <div class="owner-watermark">ChewyBB80-0</div>
 </body>
 </html>

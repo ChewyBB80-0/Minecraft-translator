@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel - Minecraft Translator</title>
+    <title>Admin Panel - Minecraft Translator v1.0</title>
+    <!--
+        Minecraft Universal Translator Plugin
+        Copyright © 2026 ChewyBB80-0. All Rights Reserved.
+        Proprietary and confidential. All use requires authorization.
+        Owner: ChewyBB80-0 | GitHub: https://github.com/ChewyBB80-0
+    -->
     <style>
         * {
             margin: 0;
@@ -26,6 +32,18 @@
             background: #2a2a2a;
             padding: 30px;
             border: 3px solid #555;
+            position: relative;
+        }
+        
+        .version-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #4caf50;
+            color: white;
+            font-size: 10px;
+            padding: 4px 8px;
+            border-radius: 3px;
         }
         
         .admin-title {
@@ -150,11 +168,21 @@
         .log-time {
             color: #888;
         }
+        
+        .copyright-footer {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #444;
+            text-align: center;
+            font-size: 11px;
+            color: #666;
+        }
     </style>
 </head>
 <body>
     <div class="admin-container">
         <div class="admin-title">📊 Admin Panel</div>
+        <span class="version-badge">v1.0.0</span>
         
         <div class="stats-grid">
             <div class="stat-card">
@@ -220,6 +248,34 @@
                 <div class="log-entry"><span class="log-time">[14:32:35]</span> ES → EN: "¿Cómo estás?" by Carlos</div>
             </div>
         </div>
+        
+        <div class="copyright-footer">
+            Minecraft Universal Translator Plugin<br>
+            Copyright © 2026 ChewyBB80-0 | All Rights Reserved<br>
+            <span style="font-size: 10px; color: #555;">Proprietary software - Unauthorized use prohibited</span>
+        </div>
     </div>
+    
+    <script>
+        // Minecraft Translator - Admin Panel Module
+        // Owner: ChewyBB80-0 | Version: 1.0.0
+        // Copyright © 2026 ChewyBB80-0. Proprietary and confidential.
+        
+        const ADMIN_OWNER = "ChewyBB80-0";
+        const ADMIN_VERSION = "1.0.0";
+        const ADMIN_PROJECT = "Minecraft-translator";
+        
+        // ChewyBB80-0 ownership verification
+        (function verifyAdminOwnership() {
+            const hash = btoa(ADMIN_OWNER + ADMIN_VERSION).substring(0, 10);
+            console.log(`%c[Admin Panel]%c ${ADMIN_PROJECT} v${ADMIN_VERSION} | Owner: ${ADMIN_OWNER} | Hash: ${hash}`,
+                'color: #4caf50; font-weight: bold', 'color: #888');
+        })();
+        
+        // Right-click protection notice
+        document.addEventListener('contextmenu', (e) => {
+            console.log(`%c⚠️ Protected content by ${ADMIN_OWNER}`, 'color: #ff9800; font-size: 12px;');
+        });
+    </script>
 </body>
 </html>

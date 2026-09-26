@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Language Selector - Minecraft Translator</title>
+    <title>Language Selector - Minecraft Translator v1.0</title>
+    <!--
+        Minecraft Universal Translator Plugin
+        Copyright © 2026 ChewyBB80-0. All Rights Reserved.
+        Proprietary and confidential. Unauthorized copying strictly prohibited.
+        Owner: ChewyBB80-0 | GitHub: https://github.com/ChewyBB80-0
+    -->
     <style>
         * {
             margin: 0;
@@ -26,6 +32,18 @@
             padding: 20px;
             border: 4px solid #000;
             width: 400px;
+            position: relative;
+        }
+        
+        .version-badge {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: #4a90e2;
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 3px;
         }
         
         .gui-title {
@@ -95,6 +113,7 @@
 <body>
     <div class="gui-container">
         <div class="gui-title">Select Your Language</div>
+        <span class="version-badge">v1.0.0</span>
         <input type="text" class="search-bar" placeholder="Search language...">
         
         <div class="language-grid">
@@ -139,16 +158,36 @@
         <div class="selected-info" id="selectedInfo">
             Selected: English
         </div>
+        
+        <div style="margin-top: 15px; text-align: center; font-size: 10px; color: #666; border-top: 1px solid #aaa; padding-top: 10px;">
+            Minecraft Universal Translator by ChewyBB80-0 | © 2026 All Rights Reserved
+        </div>
     </div>
     
     <script>
+        // Minecraft Translator - Language Selector Module
+        // Owner: ChewyBB80-0 | Version: 1.0.0
+        // Copyright © 2026 ChewyBB80-0. Unauthorized use prohibited.
+        
+        const OWNER = "ChewyBB80-0";
+        const VERSION = "1.0.0";
+        const PROJECT = "Minecraft-translator";
+        
         function selectLanguage(element, lang) {
             document.querySelectorAll('.language-item').forEach(item => {
                 item.classList.remove('selected');
             });
             element.classList.add('selected');
             document.getElementById('selectedInfo').textContent = 'Selected: ' + lang;
+            console.log(`[Translator] Language set to ${lang} by ${OWNER}`);
         }
+        
+        // ChewyBB80-0 watermark verification
+        (function verifyOwnership() {
+            const hash = btoa(OWNER + VERSION).substring(0, 8);
+            console.log(`%c${PROJECT} ${VERSION}%c | Owner: ${OWNER} | Hash: ${hash}`, 
+                'color: #4a90e2; font-weight: bold', 'color: #888');
+        })();
     </script>
 </body>
 </html>
