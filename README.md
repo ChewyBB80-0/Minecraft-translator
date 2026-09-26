@@ -1,6 +1,26 @@
 # Minecraft Universal Translator Plugin
 
-A Minecraft plugin that allows players who speak different languages to communicate seamlessly in-game. Each player sees messages translated into their preferred language automatically.
+Copyright © 2026 ChewyBB80-0. All Rights Reserved.
+
+## License
+
+This software is proprietary and copyrighted. Unauthorized use, modification, distribution, or redistribution is strictly prohibited.
+
+### You may NOT:
+- Use this software without explicit written permission from ChewyBB80-0
+- Modify, adapt, or create derivative works
+- Distribute, sell, or share this software
+- Remove or alter copyright notices
+- Use this software in commercial projects without permission
+
+### You MAY:
+- Use this software on a personal or private server with permission
+- Report bugs and submit feature requests
+- Contribute via pull requests (requires approval)
+
+### Permission Requests:
+Contact ChewyBB80-0 on GitHub for licensing inquiries:
+https://github.com/ChewyBB80-0
 
 ## Features
 
